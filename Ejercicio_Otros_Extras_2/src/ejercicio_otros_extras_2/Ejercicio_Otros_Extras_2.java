@@ -26,15 +26,17 @@ public class Ejercicio_Otros_Extras_2 {
     public static void main(String[] args) {
         // TODO code application logic here
         tiempoServicios tS = new tiempoServicios();
-       
+        boolean primeravez = false;
         
         Tiempo h1 = tS.crearTiempo();
         
-        h1.imprimirHoraCompleta();
-        
-        
-
-//
+        do{
+            if(primeravez){
+                System.out.println("\033[F\r");
+            }
+            h1.imprimirHoraCompleta();
+            
+        }while(true);
         
         
     }
