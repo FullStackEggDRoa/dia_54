@@ -54,7 +54,7 @@ public class Tiempo {
     }
     
     public void imprimirHoraCompleta(){
-        System.out.println("Hora: ["+hora+":"+minutos+":"+segundos+"]");
+        System.out.print("\rHora: ["+hora+":"+minutos+":"+segundos+"]");
     }
     
 }

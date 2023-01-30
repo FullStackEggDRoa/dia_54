@@ -24,10 +24,9 @@ public class serviciosPass {
                 System.out.print("Ingrese Contraseña: ");
                 primeravez=false;
             }else{
-                System.out.println("Reingrese Contraseña: ");
+                System.out.print("Reingrese Contraseña: ");
             }
-                
-            System.out.print("Ingrese Contraseña: ");
+            
             contrasenia=leer.next();
         } while (contrasenia.length()!=10);
         p1.setPass(contrasenia);
@@ -55,13 +54,13 @@ public class serviciosPass {
         return respuesta;
     }
     
-    public void modificarPass(Pass p1){
+    public void modificarPass(Pass p1,int op){
         System.out.print("Ingrese su Contraseña: ");
         String contrasenia_ingresada=leer.next();
         if(p1.getPass().equals(contrasenia_ingresada)){
             System.out.print("Validación Exitosa ... ");
-            System.out.print("Cambiar: 1. Nombre o 2. DNI ?: ");
-            switch(leer.nextInt()){
+            
+            switch(op){
                 case 1 -> { System.out.print("Ingrese el nuevo Nombre: ");
                     p1.setNombre(leer.next());                          
                 }

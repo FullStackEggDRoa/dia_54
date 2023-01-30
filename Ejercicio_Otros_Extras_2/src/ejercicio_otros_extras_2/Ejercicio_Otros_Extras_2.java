@@ -11,8 +11,13 @@ package ejercicio_otros_extras_2;
 
 import ejercicio_otros_extras_2.Entidades.Tiempo;
 import ejercicio_otros_extras_2.Servicios.tiempoServicios;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
 
 /**
  *
@@ -23,22 +28,44 @@ public class Ejercicio_Otros_Extras_2 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // TODO code application logic here
         tiempoServicios tS = new tiempoServicios();
-        boolean primeravez = false;
+        boolean primeravez = true;
         
         Tiempo h1 = tS.crearTiempo();
         
         do{
-            if(primeravez){
-                System.out.println("\033[F\r");
+            if(!primeravez){
+                //System.out.print("\\u0033[F");
+                
             }
             h1.imprimirHoraCompleta();
-            
+            TimeUnit.SECONDS.sleep(1);
+            primeravez=false;
+            h1.setSegundos(h1.getSegundos()+1);
+            clearScreen();
         }while(true);
         
         
+    }
+    public static void clearScreen(){
+    
+        
+        try{
+            //System.out.println("Presione enter para continuar...");
+            //new java.util.Scanner(System.in).nextLine();
+
+            Robot limpiar = new Robot();
+            limpiar.keyPress(KeyEvent.VK_WINDOWS);
+            limpiar.keyPress(KeyEvent.VK_L);
+            limpiar.keyRelease(KeyEvent.VK_L);
+            limpiar.keyRelease(KeyEvent.VK_WINDOWS);
+            
+            
+        }  catch (AWTException e) {
+            System.out.println("Error al limpiar la pantalla"+e.getMessage());
+        }
     }
     
 }
