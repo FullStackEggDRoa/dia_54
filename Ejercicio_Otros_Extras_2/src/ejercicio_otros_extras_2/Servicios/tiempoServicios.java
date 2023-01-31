@@ -22,7 +22,7 @@ public class tiempoServicios {
         int segundos_formateado=0;
         
         do{
-            System.out.print("Ingrese la Hora [HH:MM:SS]: ");
+            System.out.print("Ingrese la Hora "+ Tiempo.ANSI_RED+"[HH:MM:SS]"+Tiempo.ANSI_RESET+": ");
             String hora = leer.next();
             String[] horaAux = hora.split("\\:", 0);
 

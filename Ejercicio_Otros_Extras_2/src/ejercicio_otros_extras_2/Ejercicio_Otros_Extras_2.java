@@ -18,6 +18,7 @@ import java.awt.event.KeyEvent;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -40,10 +41,12 @@ public class Ejercicio_Otros_Extras_2 {
                 //System.out.print("\\u0033[F");
                 
             }
-            h1.imprimirHoraCompleta();
+            //System.out.print(""+Tiempo.ANSI_RESET);
+            System.out.print(h1.imprimirHoraCompleta());
             TimeUnit.SECONDS.sleep(1);
             primeravez=false;
             h1.setSegundos(h1.getSegundos()+1);
+            //System.out.print(""+Tiempo.ANSI_BLACK);
             clearScreen();
         }while(true);
         
@@ -61,7 +64,8 @@ public class Ejercicio_Otros_Extras_2 {
             limpiar.keyPress(KeyEvent.VK_L);
             limpiar.keyRelease(KeyEvent.VK_L);
             limpiar.keyRelease(KeyEvent.VK_WINDOWS);
-            
+            limpiar.keyPress(KeyEvent.VK_BACK_SPACE);
+            limpiar.keyPress(KeyEvent.VK_BACK_SPACE);
             
         }  catch (AWTException e) {
             System.out.println("Error al limpiar la pantalla"+e.getMessage());
