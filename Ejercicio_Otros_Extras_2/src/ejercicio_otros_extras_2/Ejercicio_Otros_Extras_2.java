@@ -45,8 +45,7 @@ public class Ejercicio_Otros_Extras_2 {
             System.out.print(h1.imprimirHoraCompleta());
             TimeUnit.SECONDS.sleep(1);
             primeravez=false;
-            h1.setSegundos(h1.getSegundos()+1);
-            //System.out.print(""+Tiempo.ANSI_BLACK);
+            h1.setSegundos(h1.getSegundos()+1);            //System.out.print(""+Tiempo.ANSI_BLACK);            
             clearScreen();
         }while(true);
         
@@ -54,7 +53,6 @@ public class Ejercicio_Otros_Extras_2 {
     }
     public static void clearScreen(){
     
-        
         try{
             //System.out.println("Presione enter para continuar...");
             //new java.util.Scanner(System.in).nextLine();

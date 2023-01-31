@@ -26,8 +26,7 @@ public class tiempoServicios {
             String hora = leer.next();
             String[] horaAux = hora.split("\\:", 0);
 
-            
-
+          
             switch (horaAux.length) {
                 case 3 -> {
                         hora_formateado=(int)Integer.parseInt(horaAux[0]);
