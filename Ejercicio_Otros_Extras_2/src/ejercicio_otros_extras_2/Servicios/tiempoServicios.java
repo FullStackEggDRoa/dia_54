@@ -22,7 +22,7 @@ public class tiempoServicios {
         int segundos_formateado=0;
         
         do{
-            System.out.print("Ingrese la Hora "+ Tiempo.ANSI_RED+"[HH:MM:SS]"+Tiempo.ANSI_RESET+": ");
+            System.out.print("Ingrese la Hora "+ Tiempo.ANSI_CYAN+"[HH:MM:SS]"+Tiempo.ANSI_RESET+": ");
             String hora = leer.next();
             String[] horaAux = hora.split("\\:", 0);
 
@@ -32,6 +32,7 @@ public class tiempoServicios {
                         hora_formateado=(int)Integer.parseInt(horaAux[0]);
                         minutos_formateado=(int)Integer.parseInt(horaAux[1]);
                         segundos_formateado=(int)Integer.parseInt(horaAux[2]);
+                        
                         if(horaCorrecta(hora_formateado)){
                             continue;
                         }

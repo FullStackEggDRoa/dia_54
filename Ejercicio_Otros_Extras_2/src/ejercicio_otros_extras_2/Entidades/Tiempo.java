@@ -68,30 +68,20 @@ public class Tiempo {
     
     public String imprimirHoraCompleta(){
         //System.out.print("\rHora: ["+hora+":"+minutos+":"+segundos+"]");
+        
+        
         if(segundos>59){
-            this.segundos=segundos-60;
-            if(segundos%60<1){
-                this.minutos=minutos+1;
-            }else{
+            this.minutos=minutos+1;            
+            
+            if(minutos>59){
+                this.hora=hora+1;
                 this.minutos=0;
+                if(hora>23){
+                    this.hora=0;
+                }
             }
-        }else if(minutos>59){
-            this.minutos=minutos-60;
-            if(minutos%60<1){
-                this.hora=hora+1;
-            }else{
-               this.hora=0;
-            }
-        }else if(hora>23){
-            this.hora=hora-24;
-            this.minutos=0;
-            this.segundos=0;
-        }else{
-            /*if(hora%24==1){
-                this.hora=hora+1;
-            }else{
-               this.hora=0;
-            }*/
+            
+            this.segundos=segundos-60;
         }
         
         String respuesta = HOME+"Hora: ["+String.format("%02d",hora)+":"+String.format("%02d",minutos)+":"+String.format("%02d",segundos)+"]";
